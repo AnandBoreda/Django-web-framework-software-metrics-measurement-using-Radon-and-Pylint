@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign-Up</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+   
+    <!-- <a href="#"></a> -->
+    <form action="" method="get" autocomplete="off">
+        <h1>Sign Up</h1>
+       
+        <p>
+            <input type="text" name="name" placeholder="Enter your name">
+        </p>
+        <p>
+            <input type="email" name="email" placeholder="Enter Your email">
+        </p>
+        <p>
+             <input type="password" name="password" placeholder="Create Password">
+        </p>
+        <p>
+            <input type="password" name="conf_pass" id="" placeholder="Confirm Password">
+        </p>
+        <p><select name="gender" id="">
+            <option value="">--Select Your Gender--</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        </p>
+        <button type="submit" onclick="results.html">Sign Up</button>
+    </form>
+</body>
+</html>
+ 

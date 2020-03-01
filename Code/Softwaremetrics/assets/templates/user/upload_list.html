@@ -1,0 +1,46 @@
+{% extends 'userbase.html'%}
+{% load static %}
+{% block contents %}
+
+<section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-7">
+                    <div class="banner_text text-center">
+                        <div class="banner_text_iner">
+                            <h2 style="color:white">file</h2>
+                                <p>
+                                  <a href="{% url 'uploadfile' %}" >Upload file</a>
+                                </p>
+                              {% endblock %}
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Filename</th>
+                                    <th>File</th>
+                                    <th>Download</th>
+                                  </tr>
+                                </thead>
+                                  {% for i in object %}
+                                    <tr>
+                                        <td>{{ i.filename }}</td>
+                                        <td>{{ i.file }}</td>
+                                        <td>
+                                        <a href="{{ i.pdf.url }}" >Download PDF</a>
+                                      </td>
+                                    </tr>
+                                  {% endfor %}
+                                </tbody>
+                              </table>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+

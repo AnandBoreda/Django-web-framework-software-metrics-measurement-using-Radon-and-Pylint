@@ -1,0 +1,66 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+
+<section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-7">
+                    <div class="banner_text text-center">
+                        <div class="banner_text_iner">
+                            <style>
+                                h2{
+                                    text-shadow: 0px 2px 15px pink;
+                                }
+                                input[type=text], input[type=password]{
+                                        width: auto ;
+                                        padding: 15px 30px;
+                                        border: none;
+                                        border-bottom: 1px solid rgb(105, 231, 221);
+                                        transition: all .5s;
+                                        font-size: 16px;
+                                        background-color: rgb(113, 247, 240);
+                                        border-radius: 6px;
+                                    }
+                                    input[type=text]:focus, input[type=submit]:focus, input[type=password]:focus{
+                                            box-shadow: 0px 0px 15px white;
+                                            background-color: white;
+                                        }
+                                        h3{
+                                            color: #FFF;
+                                        }
+                                    button[type=submit]{
+                                        padding: 2%;
+                                        border-radius: 20%;
+                                        background-color: rgb(198, 100, 255);
+                                        font-family: sans-serif;
+                                    }
+                                       
+                            </style>
+                            <h2 style="color:white">ADMIN LOGIN</h2>
+                                <br><br>
+                            <form action="/adminloginentered/" method="POST">
+                                    {% csrf_token %}
+                            <p> <input  type="text" name="uname" placeholder="Admin Login Id"></p>
+                                    <br/><br/>
+                            <p> <input  type="password" name="upass" placeholder="Password" > </p>
+                                   <br/><br/>
+                             <button  type="submit">Login</button><br/> 
+                              
+                            </form> 
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+

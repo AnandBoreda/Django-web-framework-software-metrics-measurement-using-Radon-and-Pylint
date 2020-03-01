@@ -1,0 +1,50 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block contents %}
+
+<section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-7">
+                    <div class="banner_text text-center">
+                        <div class="banner_text_iner">
+                            <h2 style="color:white">View Radon and Pylint: </h2>
+                            <style>
+                                #bg{
+                                    background-color: rgb(158, 255, 234);
+                                    border-radius: 15%;
+                                }
+                                #bg:hover{
+                                   background-color: rgb(255, 255, 144);
+                                }
+                            </style>
+                            <center><table border="2px">
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th >File Name</th>
+                                        <th>location</th>
+                                        <th>View</th>
+                                        <th>Find</th>
+
+                                    </tr>
+                                    {% for i in object %}
+                                    <tr>
+                                    <td style="color:white">{{i.id}}</td>
+                                    <td style="color:white">{{i.filename}}</td>
+                                    <td style="color:white">{{i.file}}</td>
+                                    <td id="bg"><a href="{{i.file.url }}" class="nav-link">view</a></td>
+                                    <td class="cta" id="bg"><a href="/filedata?id={{i.file}}" class="nav-link"><span>Find</span></a></td>
+                                    </tr>
+                                    {% endfor %}
+
+                            </table></center>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+

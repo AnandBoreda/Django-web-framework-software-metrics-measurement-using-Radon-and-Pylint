@@ -1,0 +1,164 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Radon and Pylint</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        #txt{
+            padding: 10px;
+            background: linear-gradient(45deg,red, orange);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body onload="startTime()">
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div id="txt" title="time now"></div>
+                        <!--<a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>-->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="ti-menu"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'adminpage' %}">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'viewuserdata'%}">VIEWUSERDATA</a>
+                                </li>
+                                <!--<li class="nav-item">
+                                    <a class="nav-link" href="{% url 'filedata'%}">FILEDATA</a>
+                                </li>-->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'viewfile'%}">VIEWFILES</a>
+                                </li>
+
+                               
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a class="btn_2" href="{% url 'logout' %}">LOGOUT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+
+  
+    <!-- banner part start-->
+{% block contents %}
+
+
+
+            {% endblock %}
+
+    <!--::footer_part start::-->
+    <footer class="footer_part">
+        <div class="container">
+            <div class="row justify-content-around">
+
+            <hr>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright_text">
+                      Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!--::footer_part end::-->
+
+    <!-- jquery plugins here-->
+
+    <script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+    <!-- popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- easing js -->
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <!-- swiper js -->
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.smooth-scroll.min.js' %}"></script>
+    <!-- swiper js -->
+    <script src="{% static 'js/masonry.pkgd.js' %}"></script>
+    <!-- particles js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <!-- swiper js -->
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/countdown.jquery.min.js' %}"></script>
+    <!-- <script src="{% static 'js/timer.js' %}"></script> -->
+    <!-- contact js -->
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+    <!-- custom js -->
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =
+          h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+</body>
+
+</html>

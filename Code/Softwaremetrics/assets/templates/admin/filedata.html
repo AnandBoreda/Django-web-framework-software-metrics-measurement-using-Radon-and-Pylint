@@ -1,0 +1,62 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block contents %}
+<style>
+    h2{
+        color: #FFF;
+        padding-top: 15%;
+        padding-bottom: 5%;
+    }
+    td{
+        font-family: sans-serif;
+    }
+    #head{
+        text-shadow: 0px 0px 15px;
+    }
+    .tablet{
+        background-color: darkslategrey;
+        box-shadow: 0px 0px 35px #FFF;
+    }
+</style>
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-sm-10">
+                <div class="banner_text text-center">
+                    <div class="banner_text_iner">
+                        <h2 id="head">Analytics</h2>
+                        <div class="container tablet m-0 p-0">
+                            <table border="2px">
+                                <tr><td style="color: violet">File Name</td>  <td style="color:white;">{{message.filename}}</td> </tr>
+                                <tr><td style="color:violet">LOC</td> <td style="color:white;">{{message.lines}}</td></tr>
+                                <tr> <td style="color:violet">Word count of file</td>  <td style="color:white;">{{message.words}}</td></tr>
+                                <tr> <td style="color:violet">Charecters count of file</td><td style="color:white;">{{message.charecters}}</td> </tr>
+                                <tr> <td style="color:violet">Number of functions</td> <td style="color:white;">{{message.functionscount}}</td></tr>
+                                <tr><td style="color:violet">Commentlines count of file</td> <td style="color:white;">{{message.commentlinescount}}</td></tr>
+                                <tr><td style="color:violet">Last-modified time of file</td><td style="color:white;">{{message.lastmodifiedtime}}</td> </tr>
+                                <tr><td style="color:violet">Last-accessed time of file</td> <td style="color:white;">{{message.lastaccessedtime}}</td></tr>
+                                <tr> <td style="color:violet">Classes count  of file</td> <td style="color:white;">{{message.classescount}}</td></tr>
+                                <tr> <td style="color:violet">Size  of file in bytes</td><td style="color:white;">{{message.filesize}}</td> </tr>
+                                <tr><td style="color:violet">if loop count  of file</td> <td style="color:white;">{{message.ifloop}}</td></tr>
+                                <tr><td style="color:violet">elif loop count  of file</td><td style="color:white;">{{message.elifloop}}</td> </tr>
+                                <tr> <td style="color:violet">else loop count  of file</td><td style="color:white;">{{message.elseloop}}</td> </tr>
+                                <tr><td style="color:violet">While loop count  of file</td><td style="color:white;">{{message.whileloop}}</td> </tr>
+                                <tr><td style="color:violet">for loop count  of file</td> <td style="color:white;">{{message.forloop}}</td></tr>
+                                <tr><td style="color:violet">Count except  of file</td> <td style="color:white;">{{message.countexcept}}</td> </tr>
+                                <tr><td style="color:violet">Count finally  of file</td> <td style="color:white;">{{message.countfinally}}</td></tr>
+                                <tr><td style="color:violet">Cyclomatic complexity count of file</td> <td style="color:white;">{{message.cmplx}}</td></tr>
+                                <tr> <td style="color:violet">Cyclomatic Complexity rank of file</td> <td style="color: chartreuse;" id="e">{{message.rank}}</td></tr>
+                                <tr><th style="color:rgb(140, 209, 255)">Cyclomatic Complexity performance of file</th><td style="color: lightsalmon;">{{message.perf}}</td> </tr>
+                             </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+

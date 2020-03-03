@@ -112,11 +112,11 @@ def userlogincheck(request):
 
 def userlogincheck1(request):
     if request.method == "POST":
-        email = request.POST.get('uname')
+        name = request.POST.get('uname')
         pswd = request.POST.get('upasswd')
-        print("Email = ", email, ' Password = ', pswd)
+        print("name = ", name, ' Password = ', pswd)
         try:
-            check = user.objects.get(name=email,passwd=pswd)
+            check = user.objects.get(name=name,passwd=pswd)
             status = check.status
             print('Status is = ', status)
             if status == "Activated":
@@ -167,7 +167,7 @@ def userfiledata(request):
             print("file", file)
             head, fileName = os.path.split(file)
 
-            fPath = settings.MEDIA_ROOT + '\\' + 'files\pdfs' + '\\' + fileName
+            fPath = settings.MEDIA_ROOT + '/' + 'files/pdfs' + '/' + fileName
 
             f = open(fPath)
             loc = 0
@@ -234,7 +234,7 @@ def filedata(request):
         try:
             print("file", file)
             head, fileName = os.path.split(file)
-            fPath = settings.MEDIA_ROOT + '\\' + 'files\pdfs' + '\\' + fileName
+            fPath = settings.MEDIA_ROOT + '/' + 'files/pdfs' + '/' + fileName
             f = open(fPath)
             loc = 0
             wordcount = 0

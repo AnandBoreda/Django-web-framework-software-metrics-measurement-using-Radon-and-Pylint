@@ -32,7 +32,7 @@ def adminloginentered(request):
     if request.method == 'POST':
         uname=request.POST['uname']
         passwd=request.POST['upass']
-        if uname == 'admin' and passwd=='admin':
+        if uname == 'admin' and passwd=='Ambdrag@02522':
             return render(request,"admin/adminloginentered.html")
         else:
             return HttpResponse("invalied credentials")

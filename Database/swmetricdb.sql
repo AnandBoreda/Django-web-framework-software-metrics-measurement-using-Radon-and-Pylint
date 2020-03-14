@@ -20,35 +20,31 @@ insert into `django_session` values
 
 ('j1r1pdeautg61kmcooiyw6pwuv9iq4e9','NjIxYWZiMDMwMWM4ZTk1ZjNlMTE5NjRjYmUxOWFmMTc5MWM3MmZjMjp7Im5hbWUiOiJNZWdoYW5hIiwibWFpbCI6Im1lZ2hhbmFAZ21haWwuY29tIn0=','2020-02-02 10:36:49');
 
-DROP TABLE IF EXISTS `metrics_upload`;
+DROP TABLE IF EXISTS `Metrics_upload`;
 
-CREATE TABLE `metrics_upload` (
+CREATE TABLE `Metrics_upload` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(100) NOT NULL,
   `file` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
-insert into `metrics_upload` values 
+insert into `Metrics_upload` values 
 
 (1,'text','files/pdfs/arrays_spjerLp.py'),
 
 (2,'py','files/pdfs/test.py'),
 
-(3,'algorithm','files/pdfs/decisson.py'),
+(3,'pattern','files/pdfs/pattern.py'),
 
-(4,'pattern','files/pdfs/pattern.py'),
+(4,'radioview','files/pdfs/views.py'),
 
-(5,'radioview','files/pdfs/views.py'),
-
-(6,'views1','files/pdfs/views_buO9eOI.py'),
-
-(7,'Java','files/pdfs/string.java');
+(5,'views1','files/pdfs/views_buO9eOI.py');
 /*Table structure for table `metrics_user` */
 
-DROP TABLE IF EXISTS `metrics_user`;
+DROP TABLE IF EXISTS `Metrics_user`;
 
-CREATE TABLE `metrics_user` (
+CREATE TABLE `Metrics_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `mail` varchar(254) NOT NULL,
@@ -63,7 +59,7 @@ CREATE TABLE `metrics_user` (
 
 /*Data for the table `metrics_user` */
 
-insert into `metrics_user` values 
+insert into `Metrics_user` values 
 
 (1,'Anand ','Anand.boreda@pm.me','123','123','B.tech','8374563449','Activated'),
 

@@ -166,7 +166,9 @@ def userfiledata(request):
         try:
             print("file", file)
             head, fileName = os.path.split(file)
+
             fPath = settings.MEDIA_ROOT + '/' + 'files/pdfs' + '/' + fileName
+
             f = open(fPath)
             loc = 0
             wordcount = 0
@@ -195,7 +197,7 @@ def userfiledata(request):
                 func = sum(isinstance(exp, ast.FunctionDef) for exp in tree.body)
             '''it's about finding condintion statements and loops'''
             f = open(fPath)
-            lpcountif = lpcountelif = lpcountelse = lpcountfor =lpcountwhile=countwith=countexcept=countfinally=0
+            lpcountif = lpcountelif = lpcountelse = lpcountfor = 0
             line = f.readlines()
             for x in line:
                 if re.search('if ', x):
@@ -206,40 +208,19 @@ def userfiledata(request):
                     lpcountelse = lpcountelse + 1
                 if re.search('for ', x):
                     lpcountfor = lpcountfor + 1
-                if re.search('while ', x):
-                    lpcountwhile = lpcountwhile + 1
-                if re.search('with ', x):
-                    countwith=countwith+1
-                if re.search('except:', x):
-                    countexcept=countexcept+1
-                if re.search('finally:', x):
-                    countfinally=countfinally+1
-
-
-            cmplx=lpcountif+lpcountelif+lpcountelse+lpcountwhile+lpcountfor+1+countexcept+countfinally
-            if cmplx<=5 and cmplx>=1:
-                perfrmance="Low-simple block"
-                rank="A"
-            elif cmplx>=6 and cmplx<=10:
-                perfrmance="low"
-                rank="B"
-            elif cmplx>=11 and cmplx<=20:
-                perfrmance = "Moderate"
-                rank = "C"
-            elif cmplx>=21 and cmplx<=30:
-                perfrmance = "More than Moderate"
-                rank = "D"
-
-            elif cmplx>=31 and cmplx<=40:
-                perfrmance = "high"
-                rank = "E"
+            cmplx = lpcountif + lpcountelif + lpcountelse + lpcountfor
+            if cmplx <= 10:
+                perfrmance = "normal"
+            elif cmplx > 10 and cmplx <= 20:
+                perfrmance = "moderate"
             else:
-                perfrmance="very high"
-                rank='F'
+                perfrmance = "high"
+
+
             message = {"filename": f.name, "lines": loc, "words": wordcount, "charecters": chrcount, "content": fd,
                        "functionscount": func, "commentlinescount": cmntcount, "lastmodifiedtime": s1,
                        "lastaccessedtime": s, "classescount": classcount, "ifloop": lpcountif, "elifloop": lpcountelif,
-                       "elseloop": lpcountelse,"filesize":size1,"countexcept":countexcept,"countfinally":countfinally, "forloop": lpcountfor,"whileloop":lpcountwhile,"cmplx":cmplx,"rank":rank,"perf":perfrmance}
+                       "elseloop": lpcountelse,"filesize":size1, "forloop": lpcountfor,"cmplx":cmplx,"perf":perfrmance}
             return render(request, "user/userfiledata.html", {"message": message})
         except Exception as e:
             print('Exception is ', str(e))

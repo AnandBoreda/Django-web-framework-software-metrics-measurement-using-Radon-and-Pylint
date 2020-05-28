@@ -12,3 +12,11 @@ Radon is a Python tool that can measure various metrics from the source code. Ra
 Pylint is a Python instrument which verifies a module for coding standards
 
 Cyclomatic complexity is a software metric used to indicate the complexity of a program. It is a quantitative measure of the number of linearly independent paths through a program's source code. It was developed by Thomas J. McCabe, Sr. in 1976
+
+CC score        Rank        Risk
+1-5             A           Low - simple block
+6-10            B           Low = well structured and stable block
+11-20           C           Moderate - slightly complex block
+21-30           D           More than moderate - more complex block
+31-40           E           High - complex block, alarming
+41+             F           Very high - error prone, unstable block

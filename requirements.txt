@@ -7,7 +7,7 @@ colorama==0.4.1
 Django==3.0.7
 django-excel-response2==2.0.8
 django-six==1.0.4
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 entrypoints==0.3
 flake8==3.7.9
 flake8-polyfill==1.0.2

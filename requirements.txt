@@ -4,7 +4,7 @@ automium==0.2.6
 automium-web==0.1.1
 Click==7.0
 colorama==0.4.1
-Django==3.0.7
+Django==3.0.12
 django-excel-response2==2.0.8
 django-six==1.0.4
 djangorestframework==3.11.0
